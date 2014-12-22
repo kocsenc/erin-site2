@@ -1,4 +1,4 @@
-erin-site2
-==========
+brotrip
+=======
 
-Erin Site
+Web App Used to plan the next bro trip amongst friends.

@@ -1,0 +1,52 @@
+/*******************************
+            Global
+*******************************/
+
+html,
+body {
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.content-a {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* content centering styles */
+.content-a {
+  display: table;
+}
+
+.content-b {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.erin-segment {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.specialmessage {
+  filter: alpha(opacity=80); /* IE 5-7 */
+  -moz-opacity: 0.8; /* Netscape */
+  -khtml-opacity: 0.8; /* Safari 1.x */
+  opacity: 0.8; /* Good browsers */
+}
+
+.specialbackbround {
+  background-image: url(../images/memories/memory6.png);
+  background-repeat: repeat-y;
+  background-position: 50% 0px;
+
+}

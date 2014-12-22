@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Christmas 2014 - Erin</title>
+
+  <!-- Stylesheet imports -->
+  <!--<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>-->
+  <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.min.css">
+
+  <!-- JS Imports -->
+  <script src="bower_components/angularjs/angular.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/jquery.easings.min.js"></script>
+  <script src="js/jquery.slimscroll.min.js"></script>
+  <script src="js/jquery.fullPage.min.js"></script>
+  <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
+
+</head>
+<body style=" background-image: url(images/symphony.png);
+  background-repeat: repeat;" ng-app="erinSiteApp" ng-controller="MainCtrl">
+
+
+<div id="fullpage">
+
+
+  <!--LOGIN PAGE-->
+  <div class="section">
+    <div class="erin-segment" ng-if="!siteStatus.logged_in">
+      <div class="ui form segment" ng-class="{warning: passForm.error}">
+        <div class="ui warning message">
+          <div class="header">Guess again rinsy!</div>
+        </div>
+
+        <h4 class="ui dividing header">First off, a little secret</h4>
+
+        <div class="two fields">
+          <div class="field">
+            <label>White as?</label>
+
+            <div class="ui icon input">
+              <input type="password" ng-model="passForm.field" id="password_field">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Straight like a?</label>
+
+            <div class="ui icon input">
+              <input type="password" ng-model="passForm.secondfield" id="password_two_field">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="ui submit icon button" ng-click="login()" id="submit_button">
+          <i class="red heart icon"></i>
+          Go
+        </div>
+      </div>
+    </div>
+
+    <div class="ui green message" ng-if="siteStatus.logged_in">
+      <div class="content">
+        <div class="header">
+          Welcome to Erin's Christmas Present 2014
+        </div>
+        The site is pretty self explanatory. There is a nice section of goodies, then
+        you will find some memories and finally a letter to close it off.<br><br>
+
+        For best navigation use the
+        <i class="big arrow outline left icon"></i>
+        <i class="big arrow outline up icon"></i>
+        <i class="big arrow outline down icon"></i>
+        <i class="big arrow outline right icon"></i>
+        keys on your keyboard!
+        <br><br>
+
+        <b>Enjoy browsing!</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- START  COUPOON SECTION -->
+  <div class="section" ng-show="siteStatus.logged_in">
+    <div class="content-b">
+      <h1 class="ui header" style="font-size: 80px">
+        <i class="smile icon"></i>
+        Remember when we said favor cards were cheesy?
+      </h1>
+
+      <h2 class="ui header">
+        Here we go!
+      </h2>
+    </div>
+  </div>
+
+  <!--COUPON - PAGE 1-->
+  <div class="section" ng-show="siteStatus.logged_in">
+    <div class="erin-segment">
+      <div class="ui three cards">
+        <div class="card">
+          <div class="image">
+            <img src="images/massage_one.jpg">
+          </div>
+          <div class="content">
+            <div class="header">
+              <i class="child icon"></i>
+              Massage
+            </div>
+            <div class="description">
+              Get a relaxing and epic massage from a semi-certified professional with over 30 massage hours of
+              experience.
+            </div>
+          </div>
+          <div class="extra content">
+            <a class="right floated created">
+              Expires December 2015
+            </a>
+            <a class="friends">
+              <i class="tags icon"></i>
+              2 Left
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/road_trip_one.jpg">
+          </div>
+          <div class="content">
+            <a class="header">
+              <i class="car icon"></i> In-state Road Trip
+            </a>
+
+            <div class="description">
+              Use this to schedule a road trip to a beautiful NY State destination. Some ideas include
+              the Finger Lakes or a Ski Resort.
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="tag icon"></i>
+              1 Left
+            </a>
+            <a class="right floated created">
+              Expires December 2015
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/disney_one.jpg">
+          </div>
+          <div class="content">
+            <a class="header">
+              <i class="pied piper alternate icon"></i>
+              Trip to Disney World
+            </a>
+
+            <div class="meta">
+              <a class="group">You have redeemed this already</a>
+            </div>
+
+            <div class="description">
+              Use this to go to Disney World!
+              Enjoy a Disney Resort and visiting the 4 main parks
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="tag icon"></i>
+              0 Left
+            </a>
+            <a class="right floated created">
+              Expired December 2014
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--COUPON - PAGE 2-->
+  <div class="section" ng-show="siteStatus.logged_in">
+    <div class="erin-segment">
+      <div class="ui three cards">
+        <div class="ui card">
+          <div class="ui slide masked reveal image">
+            <img src="images/wild_one.jpg" class="visible content">
+            <img src="images/wild_two.png" class="hidden content">
+          </div>
+
+          <div class="content">
+            <a class="header">
+              <i class="question icon"></i>
+              Wild Card
+            </a>
+
+            <div class="meta">
+              <a class="group">The use of this card must be approved.</a>
+            </div>
+
+            <div class="description">
+              Anything you may want!
+            </div>
+          </div>
+          <div class="extra content">
+            <div>
+              <i class="tag icon"></i>
+              1 Left
+            </div>
+            <div class="right floated created">
+              Expires December 2015
+            </div>
+          </div>
+        </div>
+        <div class="ui card">
+          <div class="image">
+            <img src="images/date.jpg" class="visible content">
+          </div>
+
+          <div class="content">
+            <a class="header">
+              <i class="food icon"></i>
+              Special Dinner for 2
+            </a>
+
+            <div class="description">
+              Enjoy an elegant dinner at a fine dine restaurant. Or per request, a wonderful home cooked meal.
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="tag icon"></i>
+              1 Left
+            </a>
+            <a class="right floated created">
+              Expires December 2015
+            </a>
+          </div>
+        </div>
+        <div class="ui card">
+          <div class="image">
+            <img src="images/movie.jpg">
+          </div>
+
+          <div class="content">
+            <div class="header">
+              <i class="film icon"></i>
+              Great American Video
+              <div class="meta">
+                <a class="group">This card is under progress</a>
+              </div>
+            </div>
+
+            <div class="description">
+              Kocsen will work on the
+              Great American Footage when this coupon is redeemed.
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="tag icon"></i>
+              0 Left
+            </a>
+            <a class="right floated created">
+              Expired December 2014
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Memories Page 1-->
+  <div class="section" ng-show="siteStatus.logged_in">
+    <div class="erin-segment">
+      <div class="content">
+        <div class="ui warning message">
+          <div class="content">
+            You will need Safari or Chrome to open this guy!
+          </div>
+        </div>
+        <div class="ui header">Fun times at Great America</div>
+
+        <div style="padding-left: 140px">
+          <video controls="controls" width="800" height="600" name="Erin Drop" src="vids/ErinRollerCoaster.mov"></video>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!--Memories Page 2-->
+  <div class="section" ng-show="siteStatus.logged_in">
+    <div class="erin-segment">
+
+
+      <div class="ui items">
+        <div class="item">
+          <div class="image">
+            <img src="images/memories/memory1.png">
+          </div>
+          <div class="content">
+            <div class="header">Take a Deep Breath</div>
+            <div class="description">
+              "Kocsen! Get me underwater ready!?" **Breath in
+            </div>
+            <div class="extra">
+              <div class="ui horizontal label"><i class="globe icon"></i>#GreatAmerican</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="image">
+            <img src="images/memories/memory5.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Merry Christmas</div>
+            <div class="description">
+              Lighting the lights in our love tree <br>
+            </div>
+            <div class="extra">
+              <div class="ui horizontal label">#SoCheesyItHurts?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="image">
+            <img src="images/memories/memory3.JPG">
+          </div>
+          <div class="content">
+            <div class="header">Brushing</div>
+            <div class="description">
+              "Here bubs, you get in I'll brush out the car."<br>
+              <i>-Erin</i>
+            </div>
+            <div class="extra">
+              <div class="ui horizontal label">#bestGFever</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="image">
+            <img src="images/memories/memory4.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Playing Zelda</div>
+            <div class="description">
+              Sometimes you can't catch a break, so you make the most attractive face ever!
+            </div>
+            <div class="extra">
+              <div class="ui horizontal label">#bestGFever</div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- START FINAL LETTER -->
+  <div class="section specialbackbround" ng-show="siteStatus.logged_in">
+    <div class="erin-segment">
+      <div class="ui icon message specialmessage">
+        <i class="circular red heart icon"></i>
+
+        <div class="content">
+          <div class="header">
+            Christmas Letter for Erin McIntosh
+          </div>
+          <p>
+            My Dearest Erin,<br>
+            <br>
+            I wanted to write a love letter, but I am a man of the future
+            so I decided to write you a letter like this. I believe that
+            it is possible to portray the same amount of thought as a handwritten one.
+
+            <br><br>
+
+            Now its Christmas time and I wanted to express my gratitude towards you and our relationship.
+            You are many things, and I could make an infinite list of your qualities.
+            But above all you are <b>True</b>. <br>
+
+            <b>True</b> to yourself,<br>
+            <b>true</b> to me,<br>
+            <b>true</b> to our relationship and <br>
+            <b>true</b> to those you love.<br>
+            That makes me feel that everything we do is pure and real, and its just great.
+
+            <br><br>
+
+            You know what I like best about us though? Its the fact that we can have fun
+            and to share interests while still being polar opposites on some aspects. Accepting that
+            we are not the same person yet at times, we are - like a mathematical paradox...
+
+
+            <br><br>
+
+            Have a blessed time during Christmas, and see you in a few days for Canada.
+
+            <br><br>
+
+
+            Your little infinity,<br>
+            <img src="images/signature.png"><br>
+            <b style="padding-left: 5em">Kocsen Chung</b>
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
